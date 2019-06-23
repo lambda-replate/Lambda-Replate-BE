@@ -1,26 +1,26 @@
 
 exports.up = function (knex, Promise) {
-    return knex.schema.createTable('businesses', function (business) {
-        business.increments()
-        business
+    return knex.schema.createTable('volunteers', function (volunteer) {
+        volunteer.increments()
+        volunteer
             .string('username', 128)
             .notNullable()
             .unique()
-        business
+        volunteer
             .string('password', 128)
             .notNullable()
-        business
+        volunteer
             .string('address', 128)
             .notNullable()
-        business
+        volunteer
             .string('email', 128)
             .notNullable()
-        business
+        volunteer
             .integer('phone')
             .notNullable()
     });
 };
 
 exports.down = function (knex, Promise) {
-    return knex.schema.dropTableIfExists('businesses')
+    return knex.schema.dropTableIfExists('volunteers')
 };
