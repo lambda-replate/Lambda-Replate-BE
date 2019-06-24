@@ -14,7 +14,7 @@ server.use(express.json());
 server.use(cors())
 
 server.get('/', () => {
-    res.status(200).json("It's working! anakin.gif")
+    res.status(200).json({message: "It's working! anakin.gif"})
 })
 
 server.use('/api/auth/volunteer', volunteerAuthRouter)
