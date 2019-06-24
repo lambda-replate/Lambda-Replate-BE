@@ -18,7 +18,7 @@ server.use('/api/auth/business', businessAuthRouter)
 server.use('/api/users/businesses', restricted, businessRouter)
 server.use('/api/users/volunteers', restricted, volunteerRouter)
 
-server.get('/', () => {
+server.get('/', (req, res) => {
     res.status(200).json({message: "It's working! anakin.gif"})
 })
 
