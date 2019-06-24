@@ -13,14 +13,13 @@ server.use(helmet());
 server.use(express.json());
 server.use(cors())
 
-server.get('/', () => {
-    res.status(200).json({message: "It's working! anakin.gif"})
-})
-
 server.use('/api/auth/volunteer', volunteerAuthRouter)
 server.use('/api/auth/business', businessAuthRouter)
 server.use('/api/users/businesses', restricted, businessRouter)
 server.use('/api/users/volunteers', restricted, volunteerRouter)
 
+server.get('/', () => {
+    res.status(200).json({message: "It's working! anakin.gif"})
+})
 
 module.exports = server
