@@ -9,20 +9,20 @@ exports.up = function (knex, Promise) {
         food
             .integer('pickup_date')
             .notNullable()
-        food
-            .integer('business_id')
-            .unsigned()
-            .references('id')
-            .inTable('businesses')
-            .onDelete('CASCADE')
-            .onUpdate('CASCADE')
-        food
-            .integer('volunteer_id')
-            .unsigned()
-            .references('id')
-            .inTable('volunteers')
-            .onDelete('CASCADE')
-            .onUpdate('CASCADE')
+        // food
+        //     .integer('business_id')
+        //     .unsigned()
+        //     .references('id')
+        //     .inTable('businesses')
+        //     .onDelete('CASCADE')
+        //     .onUpdate('CASCADE')
+        // food
+        //     .integer('volunteer_id')
+        //     .unsigned()
+        //     .references('id')
+        //     .inTable('volunteers')
+        //     .onDelete('CASCADE')
+        //     .onUpdate('CASCADE')
     });
 };
 
