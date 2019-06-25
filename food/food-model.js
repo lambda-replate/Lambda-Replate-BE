@@ -1,9 +1,32 @@
 const db = require('../data/dbConfig')
 
 module.exports = {
-    find
+    find,
+    findByBId,
+    findByVId,
+    add
 }
 
 function find() {
     return db('food')
+}
+
+function findByBId(business_id) {
+    return db('food')
+    .where({business_id: business_id})
+}
+
+function findByVId(volunteer_id) {
+    return db('food')
+    .where({volunteer_id: volunteer_id})
+}
+
+function add(food) {
+    return db('food')
+    .insert(food, 'id')
+    .then(([id]) => {
+        return db('food')
+        .where({id})
+        .first()
+    })
 }
