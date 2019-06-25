@@ -2,7 +2,8 @@ const express = require('express');
 const Food = require('./food-model');
 const jwt = require('jsonwebtoken');
 const secrets = require('../config/secrets')
-const checkFoodData = require('../middleware/checkRequiredData')
+const checkFoodData = require('../middleware/checkFoodData')
+const checkFoodUpdateInfo = require('../middleware/checkFoodUpdateInfo')
 
 const router = express.Router();
 
@@ -57,7 +58,7 @@ router.post('/', checkFoodData, (req, res) => {
     })
 })
 
-router.put('/claim', (req, res) => {
+router.put('/claim', checkFoodUpdateInfo, (req, res) => {
     let token = req.headers.authorization
     let decoded = jwt.verify(token, secrets.jwtSecret)
     let food = req.body
