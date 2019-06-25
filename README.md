@@ -77,7 +77,7 @@ Takes a JWT and an object including:
 	name: "New Food Item",
 	time: "113033",
 	description: "Wow look at this food to be donated",
-	is_claimed: “0", //0 if false, 1 if true.
+	is_claimed: "0", //0 if false, 1 if true
 	pickup_date: “01/01/2019“
 }
 ```
@@ -88,7 +88,7 @@ You will be returned the newly created food object including:
     name: "New Food Item",
     time: "113033",
     description: "Wow look at this food to be donated",
-    is_claimed: “0", //0 if false, 1 if true.
+    is_claimed: “0", //0 if false, 1 if true",
     pickup_date: “01/01/2019“,
     business_id: 7, //automatically assigned according to provided JWT
     volunteer_id: null //will be assigned when claimed by a volunteer
@@ -110,3 +110,22 @@ GET to `https://bw-replate.herokuapp.com/api/food/volunteer`
 Requires JWT
 
 Will be returned an array with food objects.
+
+## Claim a food item (volunteer) 
+
+PUT to `https://bw-replate.herokuapp.com/api/food/claim`
+
+Requires JWT and object including: 
+
+```javascript
+{
+    id: 1, //food id to be claimed
+    is_claimed: 1 //0 for false, 1 for true
+}
+```
+
+When claimed, food object's `volunteer_id` will be assigned the value of the volunteers ID by decoding the provided JWT.
+
+When unclaimed, `volunteer_id` will be set to `null` and `is_claimed` will be set back to 0.
+
+Will be return 1 if modified or a 0 if nothing was modified.
