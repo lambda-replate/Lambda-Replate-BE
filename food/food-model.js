@@ -4,7 +4,8 @@ module.exports = {
     find,
     findByBId,
     findByVId,
-    add
+    add,
+    update
 }
 
 function find() {
@@ -29,4 +30,11 @@ function add(food) {
         .where({id})
         .first()
     })
+}
+
+function update(food_id, food) {
+    return db('food')
+    .where({id: food_id})
+    .update(food)
+
 }
