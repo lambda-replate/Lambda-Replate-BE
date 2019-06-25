@@ -111,7 +111,7 @@ Requires JWT
 
 Will be returned an array with food objects.
 
-## Claim a food item (volunteer) 
+### Claim a food item (volunteer) 
 
 PUT to `https://bw-replate.herokuapp.com/api/food/claim`
 
