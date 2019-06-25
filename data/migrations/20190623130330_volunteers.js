@@ -10,13 +10,16 @@ exports.up = function (knex, Promise) {
             .string('password', 128)
             .notNullable()
         volunteer
+            .string('organization_name')
+            .notNullable()
+        volunteer
             .string('address', 128)
             .notNullable()
         volunteer
             .string('email', 128)
             .notNullable()
         volunteer
-            .integer('phone')
+            .string('phone', 128)
             .notNullable()
     });
 };
