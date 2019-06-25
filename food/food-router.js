@@ -70,7 +70,7 @@ router.put('/claim', checkFoodUpdateInfo, (req, res) => {
         food.volunteer_id = null
     }
 
-    Food.update(food.id, food)
+    Food.claim(food.id, food)
     .then(response => {
         console.log(response)
         res.status(200).json(response)
@@ -78,6 +78,26 @@ router.put('/claim', checkFoodUpdateInfo, (req, res) => {
     .catch(error => {
         console.log(error)
         res.status(500).json({message: "Server Error", error: error})
+    })
+})
+
+router.put('/:id', (req, res) => {
+    Food.update(req.params.id, req.body)
+    .then(response => {
+        res.status(200).json(response)
+    })
+    .catch(error => {
+        res.status(500).json({message: "Server Error", err: error})
+    })
+})
+
+router.delete('/:id', (req, res) => {
+    Food.remove(req.params.id)
+    .then(response => {
+        res.status(200).json(response)
+    })
+    .catch(error => {
+        res.status(500).json({message: "Server Error", err: error})
     })
 })
 
