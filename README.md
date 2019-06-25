@@ -95,7 +95,15 @@ You will be returned the newly created food object including:
 }
 ```
 
-### Get all food items owned by business
+### Get all food items in database
+
+GET to `https://bw-replate.herokuapp.com/api/food`
+
+Requires JWT
+
+Will be returned an array with food objects.
+
+### Get all food items owned by logged in business
 
 GET to `https://bw-replate.herokuapp.com/api/food/business`
 
@@ -103,7 +111,7 @@ Requires JWT
 
 Will be returned an array with food objects.
 
-### Get all food items claimed by a volunteer
+### Get all food items claimed by the logged in volunteer
 
 GET to `https://bw-replate.herokuapp.com/api/food/volunteer`
 
@@ -111,7 +119,7 @@ Requires JWT
 
 Will be returned an array with food objects.
 
-## Claim a food item (volunteer) 
+### Claim a food item (volunteer) 
 
 PUT to `https://bw-replate.herokuapp.com/api/food/claim`
 

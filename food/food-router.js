@@ -59,9 +59,8 @@ router.post('/', (req, res) => {
 router.put('/claim', (req, res) => {
     let token = req.headers.authorization
     let decoded = jwt.verify(token, secrets.jwtSecret)
-    let volunteerId = decoded.subject
     let food = req.body
-    
+
     if (food.is_claimed === 1 ) {
         food.volunteer_id = decoded.subject
     }
