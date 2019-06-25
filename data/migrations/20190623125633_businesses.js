@@ -10,7 +10,7 @@ exports.up = function (knex, Promise) {
             .string('password', 128)
             .notNullable()
         business
-            .string('organization-name')
+            .string('organization_name')
             .notNullable()
         business
             .string('address', 128)

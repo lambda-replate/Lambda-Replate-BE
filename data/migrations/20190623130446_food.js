@@ -10,6 +10,12 @@ exports.up = function (knex, Promise) {
             .integer('pickup_date')
             .notNullable()
         food
+            .string('time', 128)
+        food
+            .string('description', 255)
+        food
+            .integer('is_claimed')
+        food
             .integer('business_id')
             .unsigned()
             .references('id')
@@ -23,6 +29,7 @@ exports.up = function (knex, Promise) {
             .inTable('volunteers')
             .onDelete('CASCADE')
             .onUpdate('CASCADE')
+        food
     });
 };
 
