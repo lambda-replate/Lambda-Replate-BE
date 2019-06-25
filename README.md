@@ -95,6 +95,19 @@ You will be returned the newly created food object including:
 }
 ```
 
+### Update food item info
+
+PUT to `https://bw-replate.herokuapp.com/api/food/:id` //where id is food's ID
+
+Takes a JWT and an object containing any of the existing food properties that are to be updated.
+
+### Delete food item
+
+DELETE to `https://bw-replate.herokuapp.com/api/food/:id` //where id is food's ID
+
+Takes a JWT
+
+
 ### Get all food items in database
 
 GET to `https://bw-replate.herokuapp.com/api/food`

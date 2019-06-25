@@ -58,10 +58,11 @@ router.post('/', checkFoodData, (req, res) => {
     })
 })
 
-router.put('/claim', checkFoodUpdateInfo, (req, res) => {
+router.put('/claim/:id', checkFoodUpdateInfo, (req, res) => {
     let token = req.headers.authorization
     let decoded = jwt.verify(token, secrets.jwtSecret)
     let food = req.body
+    food.id = req.params.id
 
     if (food.is_claimed === 1 ) {
         food.volunteer_id = decoded.subject
