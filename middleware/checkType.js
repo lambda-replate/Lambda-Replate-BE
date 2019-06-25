@@ -1,5 +1,4 @@
-module.exports = type => {
-    return (req, res, next) => {
+module.exports = (req, res, next) => {
         if (req.user) {
             console.log(req.user)
             if (
@@ -15,5 +14,4 @@ module.exports = type => {
         else {
             res.status(401).json('Not Authorized')
         }
-    }
 }
