@@ -14,10 +14,13 @@ server.use(helmet());
 server.use(express.json());
 server.use(cors())
 
+//login
 server.use('/api/auth/volunteer', volunteerAuthRouter)
 server.use('/api/auth/business', businessAuthRouter)
+//get users
 server.use('/api/users/businesses', restricted, businessRouter)
 server.use('/api/users/volunteers', restricted, volunteerRouter)
+//get/add food
 server.use('/api/food', restricted, foodRouter)
 
 server.get('/', (req, res) => {
