@@ -51,7 +51,6 @@ router.post('/', (req, res) => {
         res.status(200).json(response)
     })
     .catch(error => {
-        console.log(error)
         res.status(500).json("Server Error")
     })
 })
