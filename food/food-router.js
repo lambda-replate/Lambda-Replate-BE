@@ -42,11 +42,16 @@ router.get('/volunteer', (req, res) => {
 })
 
 router.post('/', (req, res) => {
-    Food.add(req.body)
+    let token = req.headers.authorization
+    let decoded = jwt.verify(token, secrets.jwtSecret)
+    let food = req.body
+    food.business_id = decoded.subject
+    Food.add(food)
     .then(response => {
         res.status(200).json(response)
     })
     .catch(error => {
+        console.log(error)
         res.status(500).json("Server Error")
     })
 })
