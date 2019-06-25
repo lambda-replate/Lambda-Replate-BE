@@ -134,13 +134,12 @@ Will be returned an array with food objects.
 
 ### Claim a food item (volunteer) 
 
-PUT to `https://bw-replate.herokuapp.com/api/food/claim`
+PUT to `https://bw-replate.herokuapp.com/api/food/claim/:id`
 
 Requires JWT and object including: 
 
 ```javascript
 {
-    id: 1, //food id to be claimed
     is_claimed: 1 //0 for false, 1 for true
 }
 ```
