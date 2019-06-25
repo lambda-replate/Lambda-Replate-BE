@@ -10,13 +10,16 @@ exports.up = function (knex, Promise) {
             .string('password', 128)
             .notNullable()
         business
+            .string('organization-name')
+            .notNullable()
+        business
             .string('address', 128)
             .notNullable()
         business
             .string('email', 128)
             .notNullable()
         business
-            .integer('phone')
+            .string('phone', 128)
             .notNullable()
     });
 };
