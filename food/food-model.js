@@ -5,6 +5,8 @@ module.exports = {
     findByBId,
     findByVId,
     add,
+    claim,
+    remove,
     update
 }
 
@@ -32,9 +34,20 @@ function add(food) {
     })
 }
 
-function update(food_id, food) {
+function claim(food_id, food) {
     return db('food')
     .where({id: food_id})
     .update(food)
+}
 
+function update(id, food) {
+    return db('food')
+    .where({id})
+    .update(food)
+}
+
+function remove(id) {
+    return db('food')
+    .where({id})
+    .del()
 }
