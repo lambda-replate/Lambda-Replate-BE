@@ -61,14 +61,14 @@ router.put('/claim', (req, res) => {
     let decoded = jwt.verify(token, secrets.jwtSecret)
     let volunteerId = decoded.subject
     let food = req.body
+    
     if (food.is_claimed === 1 ) {
         food.volunteer_id = decoded.subject
     }
     else {
         food.volunteer_id = null
     }
-    // food.volunteer_id = decoded.subject
-    // food.is_claimed = req.body.is_claimed
+
     Food.update(food.id, food)
     .then(response => {
         console.log(response)
