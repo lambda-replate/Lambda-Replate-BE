@@ -1,7 +1,7 @@
 # Lambda-Replate-BE
 
 
-###Register New Business
+### Register New Business
 
 POST to `https://bw-replate.herokuapp.com/api/auth/business/register`
 
@@ -19,7 +19,7 @@ Takes an object including:
 You will be returned the newly created user object as well as a JWT
 
 
-###Login Existing Business
+### Login Existing Business
 
 POST to `https://bw-replate.herokuapp.com/api/auth/business/login`
 
@@ -29,10 +29,11 @@ Takes an object including:
         username: “businessUsername",
         password: “pass”
 }
+```
 
 You will be returned a JWT
 
-###Register New Volunteer
+### Register New Volunteer
 
 POST to `https://bw-replate.herokuapp.com/api/auth/volunteer/register`
 
@@ -50,7 +51,7 @@ Takes an object including:
 You will be returned the newly created user object as well as a JWT
 
 
-###Login Existing Volunteer
+### Login Existing Volunteer
 
 POST to `https://bw-replate.herokuapp.com/api/auth/volunteer/login`
 
@@ -60,6 +61,7 @@ Takes an object including:
         username: “volunteerUsername",
         password: “pass”
 }
+```
 
 You will be returned a JWT
 
