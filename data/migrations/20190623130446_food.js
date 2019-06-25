@@ -7,7 +7,7 @@ exports.up = function (knex, Promise) {
             .notNullable()
             .unique()
         food
-            .integer('pickup_date')
+            .string('pickup_date')
             .notNullable()
         food
             .string('time', 128)
