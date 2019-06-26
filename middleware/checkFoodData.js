@@ -9,9 +9,6 @@ module.exports = (req, res, next) => {
         else if (!req.body.description) {
             res.status(401).json('Please provide description')
         }
-        else if (!req.body.is_claimed) {
-            res.status(401).json('Please provide is_claimed')
-        }
         else if (!req.body.pickup_date) {
             res.status(401).json('Please provide pickup_date')
         }
