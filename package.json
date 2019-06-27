@@ -14,14 +14,19 @@
     "helmet": "^3.18.0",
     "jsonwebtoken": "^8.5.1",
     "knex": "^0.17.6",
+    "knex-cleaner": "^1.1.4",
     "pg": "^7.11.0",
     "sqlite3": "^4.0.9"
   },
   "scripts": {
     "server": "nodemon index.js",
-    "start": "node index.js"
+    "start": "node index.js",
+    "test": "cross-env DB_ENV=testing jest --watch"
   },
   "devDependencies": {
-    "nodemon": "^1.19.1"
+    "cross-env": "^5.2.0",
+    "jest": "^24.8.0",
+    "nodemon": "^1.19.1",
+    "supertest": "^4.0.2"
   }
 }

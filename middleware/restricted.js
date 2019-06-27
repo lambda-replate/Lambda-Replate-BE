@@ -15,6 +15,6 @@ module.exports = (req, res, next) => {
         })
     }
     else {
-        res.status(400).json('No token provided')
+        res.status(401).json('No token provided')
     }
 }

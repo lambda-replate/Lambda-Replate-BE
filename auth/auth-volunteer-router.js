@@ -13,7 +13,7 @@ router.post('/register', (req, res) => {
     Volunteers.add(user)
     .then(user => {
         const token = generateToken(user)
-        res.status(200).json({user: user, token})
+        res.status(201).json({user: user, token})
     })
     .catch(error => {
         res.status(500).json('Server Error')
