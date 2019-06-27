@@ -2,7 +2,7 @@ const bcrypt = require('bcryptjs')
 
 exports.seed = function(knex, Promise) {
   // Deletes ALL existing entries
-  return knex('volunteers').del()
+  return knex('volunteers')
     .then(function () {
       // Inserts seed entries
       return knex('volunteers').insert([
