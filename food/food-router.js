@@ -50,7 +50,7 @@ router.post('/', checkFoodData, (req, res) => {
     food.business_id = decoded.subject
     Food.add(food)
     .then(response => {
-        res.status(200).json(response)
+        res.status(201).json(response)
     })
     .catch(error => {
         console.log(error)

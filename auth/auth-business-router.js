@@ -13,7 +13,7 @@ router.post('/register', (req, res) => {
     Businesses.add(user)
     .then(user => {
         const token = generateToken(user)
-        res.status(200).json({user: user, token})
+        res.status(201).json({user: user, token})
     })
     .catch(error => {
         console.log(error)
